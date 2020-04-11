@@ -1,6 +1,6 @@
 # bot
 
-https://www.pythonanywhere.com/user
+https://www.pythonanywhere.com/
 
 Telegram bot
 
