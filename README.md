@@ -10,3 +10,5 @@ Telegram bot
   updater = Updater(
         bot = bot, use_context=True
     )
+    
+Version 13 will have use_context=True set as default.
