@@ -1,10 +1,11 @@
+
+moved
+
 from telegram import Bot
 from telegram import Update
 from telegram.ext import Updater
 from telegram.ext import MessageHandler
 from telegram.ext import Filters
-
-TG_TOKEN = "1190878393:AAExCPqYUr5nEulz7O27GMmss9HHOApjbEw"
 
 
 def message_handler(bot: Bot, update: Update):
