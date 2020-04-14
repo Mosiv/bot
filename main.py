@@ -4,9 +4,8 @@ from telegram.ext import Updater
 from telegram.ext import MessageHandler
 from telegram.ext import Filters
 
-TG_TOKEN = ""
+from bot.config import TG_TOKEN
 
-//обработка сообщений
 def message_handler(bot: Bot, update: Update):
     user = update.effective_user
     if user:
@@ -15,27 +14,27 @@ def message_handler(bot: Bot, update: Update):
         name = 'аноним'
 
     text = update.effective_message.text
-    reply_text = f'Привет, (name)!\n\n(text)'
+    reply_text = f'Привет, {name}!\n\n{text}'
 
-    bot.send_message (
-        chat_id= update.effective_message.chat_id,
+    bot.send_message(
+        chat_id=update.effective_message.chat_id,
         text=reply_text,
     )
 
-//каркас нашего бота
 def main():
-    bot = Bot (
+    print('Start')
+    bot = Bot(
         token = TG_TOKEN,
     )
     updater = Updater(
-        bot = bot,
+        bot=bot,
     )
-
     handler = MessageHandler(Filters.all, message_handler)
     updater.dispatcher.add_handler(handler)
 
     updater.start_polling()
     updater.idle()
+    print('Finish')
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
